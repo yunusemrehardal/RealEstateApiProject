@@ -1,0 +1,33 @@
+﻿@using Uı.Models.User;
+@model UserResultViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <label>Adı</label>
+        <input type="text" class="form-control" asp-for="Name" />
+        <br />
+        <label>Soyadı</label>
+        <input type="text" class="form-control" asp-for="Surname" />
+        <br />
+        <label>Kullanıcı Adı</label>
+        <input type="text" class="form-control" asp-for="UserName" />
+        <br />
+        <label>Şifre</label>
+        <input type="text" class="form-control" asp-for="Password" />
+        <br />
+        <label>Email Adresi</label>
+        <input type="text" class="form-control" asp-for="Email" />
+        <br />
+        <label>Telefon Numarası</label>
+        <input type="text" class="form-control" asp-for="Phone" />
+        <br />
+        <a href="/Default/Index/" class="btn btn-danger">İptal</a>
+        <button type="submit" class="btn btn-warning">Güncelle</button>
+    </form>
+</div>

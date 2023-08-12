@@ -1,0 +1,50 @@
+﻿@using Uı.Models.User;
+@model UserResultViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Glassmorphism Login</title>
+    <link rel="stylesheet" href="~/glassmorphism-login/dist/style.css" />
+
+</head>
+
+    <!-- partial:index.partial.html -->
+    <body>
+        <section class="container">
+            <div class="login-container">
+                <div class="circle circle-one"></div>
+                <div class="form-container">
+                    <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                    <form method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <label>Email</label>
+                        <input type="text" class="form-control" asp-for="UserName" />
+                        <br />
+                        <label>Şifre</label>
+                        <input type="password" class="form-control" asp-for="Password" />
+                        <br />
+                        <button type="submit">Giriş Yap </button>
+                        
+                    </form>
+                <div class="register-forget opacity"> 
+                    <div class="register-forget opacity">
+                        <a href="/Register/Index/"> Üye Ol </a>
+                    </div>
+                </div>
+                <div class="circle circle-two"></div>
+            </div>
+            <div class="theme-btn-container"></div>
+        </section>
+    </body>
+    <!-- partial -->
+    <script src="glassmorphism-login/dist/script.js"></script> 
+
+
+</html>

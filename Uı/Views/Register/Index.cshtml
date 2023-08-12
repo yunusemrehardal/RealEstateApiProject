@@ -1,0 +1,61 @@
+﻿@using Uı.Models.User;
+@model UserResultViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Glassmorphism Login</title>
+    <link rel="stylesheet" href="~/glassmorphism-login/dist/style.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <body>
+        <section class="container">
+            <div class="login-container">
+                <div class="circle circle-one"></div>
+                <div class="form-container">
+                    <h1 class="opacity">Kayıt Ol</h1>
+                    <form method="POST">
+                        <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="Adınız" name="Name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="Soyadınız" name="Surname">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="Kullanıcı Adınız" name="UserName">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="email" placeholder="Email Adresiniz" name="Email">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="Telefon Numaranız" name="Phone">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="password" placeholder="Şifreniz" name="Password">
+                        </div>
+                        <h4 style="color:orchid">@ViewBag.mesaj</h4>
+                        <div class="p-t-30">
+                            <button class="btn btn--radius btn--green" type="submit">Kayıt Ol</button>
+                        </div>
+                        <br />
+                        <p class="w3l-register-p">Hesabın Var Mı ?<a style="color: #00BCD4; text-decoration: none;" href="/Login/Index/" class="register"> Giriş Yap</a></p>
+                    </form>
+                </div>
+                <div class="circle circle-two"></div>
+            </div>
+            <div class="theme-btn-container"></div>
+        </section>
+    </body>
+    <!-- partial -->
+    <script src="glassmorphism-login/dist/script.js"></script>
+</body>
+</html>

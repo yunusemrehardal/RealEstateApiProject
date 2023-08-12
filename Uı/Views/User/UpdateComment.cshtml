@@ -1,0 +1,29 @@
+﻿@using Uı.Models.Comment;
+@model UpdateCommentViewModel
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <label>Adı</label>
+        <input type="text" class="form-control" asp-for="Name" />
+        <br />
+        <label>Soyadı</label>
+        <input type="text" class="form-control" asp-for="Surname" />
+        <br />
+        <label>Ünvan</label>
+        <input type="text" class="form-control" asp-for="UserTitle" />
+        <br />
+        <label>Mesaj</label>
+        <textarea class="form-control" asp-for="Content"> </textarea>
+        <br />
+        <a href="/User/MyComments/" class="btn btn-danger">İptal</a>
+        <button type="submit" class="btn btn-warning">Güncelle</button>
+    </form>
+
+</div>

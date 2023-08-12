@@ -1,0 +1,161 @@
+﻿@using Uı.Models.Home;
+@model List<ResultHomeViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="w3l-cover-3">
+    <div class="cover top-bottom">
+        <div class="container">
+            <div class="middle-section text-center">
+                <div class="section-width">
+                    <p>Hayalinizdeki eve kavuşun!</p>
+                    <h2>Hemen Filtreleyin</h2>
+                    <br />
+                    <form class="w3l-cover-3-gd" method="GET">
+                        <input type="number" name="price" placeholder="Fiyat">
+                        <span class="input-group-btn">
+                            <select class="btn btn-default" name="status">
+                                <option value="">Durumu</option>
+                                <option value="Satılık">Satılık</option>
+                                <option value="Kiralık">Kiralık</option>
+                            </select>
+                        </span>
+                        <span class="input-group-btn">
+                            <select class="btn btn-default" name="adress">
+                                <option value="">Şehir Seçin</option>
+                                <option value="Ankara">Ankara</option>
+                                <option value="Bursa">Bursa</option>
+                                <option value="İzmir">İzmir</option>
+                                <option value="İstanbul">İstanbul</option>
+                            </select>
+                        </span>
+                        <button type="submit" class="btn-primary">Ara</button>
+                    </form>
+                </div>
+                <section id="bottom" class="demo">
+                    <a href="#bottom"><span></span>Kaydır</a>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="locations-1" id="locations">
+    <div class="locations py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="heading text-center mx-auto">
+                <h3 class="title-big">İlanlar</h3>
+            </div>
+
+            <div class="row pt-md-5 pt-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <a href="/Default/HomeDetails/@item.Id">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>@item.Status</span></div>
+                                <img class="img-fluid" src="@item.ImageUrl" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">@item.Price ₺</h3>
+                                    <span class="post">@item.Adress</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section class="w3l-index3" id="about">
+    <section class="w3l-bottom-grids py-5" id="steps">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="grids-area-hny main-cont-wthree-fea row">
+                <div class="col-lg-4 col-md-6 grids-feature">
+                    <div class="area-box no-box-shadow">
+                        <span class="fa fa-home"></span>
+                        <h4><a href="#feature" class="title-head">Ev Satın Alma</a></h4>
+                        <p>İstediğiniz konumdaki evi tek tıkla görüp satın alabilirsiniz.</p>
+                        <a href="/Default/HomeList/" class="more">İlanlar <span class="fa fa-long-arrow-right"></span> </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                    <div class="area-box no-box-shadow">
+                        <span class="fa fa-home"></span>
+                        <h4><a href="#feature" class="title-head">Ev Kiralama</a></h4>
+                        <p>Kiralık ev mi lazım ? O zaman sitemizden kiralık ilanlara bakıp dilediğin evi kiralayabilirsin.</p>
+                        <a href="/Default/HomeList/" class="more">İlanlar <span class="fa fa-long-arrow-right"></span> </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                    <div class="area-box no-box-shadow">
+                        <span class="fa fa-building-o"></span>
+                        <h4><a href="#feature" class="title-head">Hayalinizdeki Eve kavuşun</a></h4>
+                        <p></p>
+                        <a href="/Default/HomeList/" class="more">İlanlar <span class="fa fa-long-arrow-right"></span> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w3l-index3" id="about">
+        <div class="midd-w3 py-5">
+            <div class="container pb-lg-5 pb-md-4 pb-2">
+                <div class="row">
+                    <div class="col-lg-5 pr-lg-0">
+                        <div class="w3l-left-img1">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 pl-lg-0">
+                        <div class="w3l-right-info">
+                            <h6 class="title-small">Yorumlar</h6>
+                            <div class="client-grid">
+                                <div class="client-title">
+                                    <h3 class="title-big">Müşteriler Bizim hakkımızda ne düşünüyor ?</h3>
+                                </div>
+                                <div class="clients-info">
+                                    <h3 class="title-big">145</h3>
+                                    <p>Mutlu Müşteri</p>
+                                </div>
+                            </div>
+
+                            <div class="w3l-clients" id="testimonials">
+                                <div id="owl-demo1" class="owl-carousel owl-theme mt-4 pt-2 mb-4">
+                                    @foreach (var item in ViewBag.Comments)
+                                    {
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial">
+                                                    <div class="testi-des">
+                                                        <div class="peopl align-self">
+                                                            <h4>@item.Name @item.Surname</h4>
+                                                            <p class="indentity">@item.UserTitle</p>
+                                                        </div>
+                                                    </div>
+                                                    <blockquote>
+                                                        <q>
+                                                            @item.Content
+                                                        </q>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                </div>
+                            </div>
+
+                            <a href="/Contact/Index/" class="btn btn-style btn-primary mt-5">Yorum Yap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</section>
+

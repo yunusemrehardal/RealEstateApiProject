@@ -1,0 +1,38 @@
+﻿@model List<ResultCommentViewModel>
+@{
+    Layout = null;
+    int count = 0;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h2 class="text-center"> YORUMLARIM </h2>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Ünvan</th>
+            <th>Mesaj</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.UserTitle</td>
+                <td>@item.Content</td>
+                <td><a href="/User/DeleteComment/@item.Id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/User/UpdateComment/@item.Id" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Default/Index/" class="btn btn-info">Ana Sayfa</a>
+</div>
+
+

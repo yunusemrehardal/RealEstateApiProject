@@ -1,0 +1,44 @@
+﻿@using Uı.Models.Home;
+@model List<ResultHomeListViewModel>
+@{
+    Layout = null;
+    int count = 0;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h2 class="text-center"> İLANLARIM </h2>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>İlan Başlığı</th>
+            <th>Açıklama</th>
+            <th>Fiyat</th>
+            <th>Adres</th>
+            <th>Kategori</th>
+            <th>Durumu</th>
+            <th>Resim</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Price ₺</td>
+                <td>@item.Adress</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Status</td>
+                <td><img src="@item.ImageUrl" width="250" /></td>
+                <td><a href="/Home/DeleteHome/@item.Id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/User/UpdateHome/@item.Id" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Default/Index/" class="btn btn-info">Ana Sayfa</a>
+</div>
+

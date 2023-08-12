@@ -1,0 +1,127 @@
+﻿@using Uı.Models.Home;
+@model ResultHomeListViewModel
+@{
+    ViewData["Title"] = "HomeDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="#">Ana Sayfa</a></li>
+            <li class="#"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İlanlar</li>
+            <li class="#"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İlan Detayları</li>
+        </ul>
+    </div>
+</section>
+<!--/blog-post-->
+<section class="w3l-blog post-content py-5">
+    <div class="container py-lg-4 py-md-3 py-2">
+        <div class="inner mb-4">
+            <ul class="blog-single-author-date align-items-center">
+                <li>
+                    <div class="listing-category"><span>@Model.Status</span></div>
+                </li>
+            </ul>
+        </div>
+        <div class="post-content">
+            <h2 class="title-single"> @Model.Title</h2>
+        </div>
+        <div class="blo-singl mb-4">
+            <ul class="blog-single-author-date align-items-center">
+                <li>
+                    <p>@Model.Adress</p>
+                </li>
+                <li><span class="fa fa-bed"></span> @Model.BedroomCount Beds</li>
+                <li><span class="fa fa-bath"></span> @Model.BathroomCount Baths</li>
+                <li><span class="fa fa-share-square-o"></span> @Model.Area m2</li>
+            </ul>
+            <ul class="share-post">
+                <a href="#url" class="cost-estate m-o">@Model.Price ₺</a>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 w3l-news">
+                <div class="blog-single-post">
+                    <div class="single-post-image mb-5">
+                        <div class="owl-blog owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="card">
+                                    <img src="@Model.ImageUrl" class="img-fluid radius-image" alt="image">
+                                </div>
+                            </div>
+                            @if (Model.ImageUrl2 != "bos")
+                            {
+                                <div class="item">
+                                    <div class="card">
+                                        <img src="@Model.ImageUrl2" class="img-fluid radius-image" alt="image">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>                    
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-lg-0 mt-5">
+                        <aside class="sidebar">
+                            <div class="single-bg-white">
+                                <h3 class="post-content-title mb-4">İlan Açıklaması</h3>                               
+                                    <tr>                                        
+                                        <td>@Model.Description</td>
+                                    </tr>                               
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5">
+                <aside class="sidebar">
+
+                    <div class="single-bg-white">
+                        <h3 class="post-content-title mb-4">İlan Detayları</h3>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>İlan Sahibi:</th>
+                                <td>@Model.UserName</td>
+                            </tr>
+                            <tr>
+                                <th>İlan Tarihi:</th>
+                                <td>@Model.Date.ToString("dd/mm/yyyy")</td>
+                            </tr>
+                            <tr>
+                                <th>İlan Tipi:</th>
+                                <td>@Model.Status</td>
+                            </tr>
+                            <tr>
+                                <th>Kategori:</th>
+                                <td>@Model.CategoryName</td>
+                            </tr>
+                            <tr>
+                                <th>m2 (net):</th>
+                                <td>@Model.Area</td>
+                            </tr>
+                            <tr>
+                                <th>Oda Sayısı:</th>
+                                <td>@Model.RoomCount+1</td>
+                            </tr>
+                            <tr>
+                                <th>Yatak Odası Sayısı:</th>
+                                <td>@Model.BedroomCount</td>
+                            </tr>
+                            <tr>
+                                <th>Banyo Sayısı:</th>
+                                <td>@Model.BathroomCount</td>
+                            </tr>
+                        </table>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+

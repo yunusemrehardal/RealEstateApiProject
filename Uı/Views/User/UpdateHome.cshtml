@@ -1,0 +1,56 @@
+﻿@using Uı.Models.Home;
+@model UpdateHomeViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <label>İlan Başlığı</label>
+        <input type="text" class="form-control" asp-for="Title" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" class="form-control" asp-for="Description" />
+        <br />
+        <label>Fiyat</label>
+        <input type="text" class="form-control" asp-for="Price" />
+        <br />
+        <label>Adres</label>
+        <input type="text" class="form-control" asp-for="Adress" />
+        <br />
+        <label>Yatak Oda Sayısı</label>
+        <input type="text" class="form-control" asp-for="BedroomCount" />
+        <br />
+        <label>Banyo Sayısı</label>
+        <input type="text" class="form-control" asp-for="BathroomCount" />
+        <br />
+        <label>Oda Sayısı</label>
+        <input type="text" class="form-control" asp-for="RoomCount" />
+        <br />
+        <label>Genişlik (m2)</label>
+        <input type="text" class="form-control" asp-for="Area" />
+        <br />
+        <label>Kategori</label>
+        <<select class="form-control" asp-for="CategoryName">
+            <option value="Daire">Daire</option>
+            <option value="MustakilEv">Müstakil Ev</option>
+            <option value="Villa">Villa</option>
+            <option value="Rezidans">Rezidans</option>
+            <option value="Yalı">Yalı</option>
+        </select>
+        <br />
+        <label>Durumu</label>
+        <select class="form-control" asp-for="Status">
+            <option value="Satılık">Satılık</option>
+            <option value="Kiralık">Kiralık</option>
+        </select>
+        <br />
+        <label>Resim Url</label>
+        <input type="text" class="form-control" asp-for="ImageUrl" />
+        <br />
+        <button type="submit" class="btn btn-warning">Güncelle</button>
+    </form>
+</div>

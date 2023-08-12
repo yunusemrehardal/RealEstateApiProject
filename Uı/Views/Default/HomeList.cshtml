@@ -1,0 +1,71 @@
+﻿@using Uı.Models.Home;
+@model List<ResultHomeListViewModel>
+@{
+    ViewData["Title"] = "HomeList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İlan Listesi</li>
+        </ul>
+    </div>
+</section>
+<section class="locations-1" id="locations">
+    <div class="locations py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 listing-img">
+                        <a href="/Default/HomeDetails/@item.Id">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>@item.Status</span></div>
+                                <img class="img-fluid" src="@item.ImageUrl" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">@item.Price ₺</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">@item.Title</a>
+                            </h4>
+                            <p class="user_position">@item.Adress</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> @item.BedroomCount Yatak</li>
+                                <li><span class="fa fa-shower"></span> @item.BathroomCount Banyo</li>
+                                <li><span class="fa fa-share-square-o"></span> @item.Area m2</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="/starter/assets/images/user.png" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">@item.UserName </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Kullanıcı</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

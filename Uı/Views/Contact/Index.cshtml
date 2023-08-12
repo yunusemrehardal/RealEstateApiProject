@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="#">Ana Sayfa</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İletişim</li>
+        </ul>
+    </div>
+</section>
+<!-- contacts -->
+<section class="w3l-contact-7 pt-5" id="contact">
+    <div class="contacts-9 pt-lg-5 pt-md-4">
+        <div class="container">
+            <div class="top-map">
+                <div class="row map-content-9">
+                    <div class="col-lg-8">
+                        <div class="contact-form">
+                            <h5 class="mb-2 text-center">Yorum Yap</h5>
+                            <p class="mb-4 text-center">Hakkımızda düşüncelerinizi belirtin</p>
+                            <form method="post">
+                                <div class="input-field">
+                                    <input type="text" name="Name" id="w3lName" placeholder="Adınız"
+                                           required="">
+                                </div>
+                                <div class="input-field mt-4">
+                                    <input type="text" name="Surname" id="w3lSender" placeholder="Soyadınız"
+                                           required="">
+                                </div>
+                                <div class="input-field mt-4">
+                                    <input type="text" name="UserTitle" id="w3lSender" placeholder="Ünvanınız"
+                                           required="">
+                                </div>
+                                <div class="input-field mt-4">
+                                    <textarea name="Content" id="w3lMessage" placeholder="Mesajınız"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-style mt-3">Gönder</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 cont-details">
+                        <address>
+                            <h5 class="">Ofisimiz</h5>
+                            <p>
+                                <span class="fa fa-map-marker"></span>Ankara - Bilkent
+                                
+                            </p>
+
+                            <h5 class="mt-4 pt-lg-3">İletişim</h5>
+                            <p>
+                                <span class="fa fa-mobile"></span> <strong>Telefon No:</strong>
+                                <a href="tel:+9(0507) 000 00 61"> (+90) 888 888 41 61</a>
+                            </p>
+                            <p>
+                                <span class="fa fa-envelope"></span> <strong>Email :</strong>
+                                <a href="mailto:hardal@gmail.com"> emlak@gmail.com</a>
+                            </p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map mt-5">        
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12246.25504338019!2d32.7586069!3d39.8840085!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347ac1178db1d%3A0xe8b188e5b5346c38!2sBilkent%20Center!5e0!3m2!1str!2str!4v1689926318897!5m2!1str!2str" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</section>
+
